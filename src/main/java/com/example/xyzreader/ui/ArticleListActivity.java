@@ -22,6 +22,7 @@ import com.example.xyzreader.R;
 import com.example.xyzreader.data.ArticleLoader;
 import com.example.xyzreader.data.ItemsContract;
 import com.example.xyzreader.data.UpdaterService;
+import com.example.xyzreader.ui.helper.TypefaceHelper;
 
 /**
  * An activity representing a list of Articles. This activity has different presentations for
@@ -52,7 +53,6 @@ public class ArticleListActivity extends ActionBarActivity implements
         setContentView(R.layout.activity_article_list);
 
         mToolbar = (Toolbar) findViewById(R.id.toolbar);
-
 
         final View toolbarContainerView = findViewById(R.id.toolbar_container);
 
@@ -116,8 +116,12 @@ public class ArticleListActivity extends ActionBarActivity implements
         public ViewHolder(View view) {
             super(view);
             thumbnailView = (DynamicHeightNetworkImageView) view.findViewById(R.id.thumbnail);
+
             titleView = (TextView) view.findViewById(R.id.article_title);
+            titleView.setTypeface(TypefaceHelper.getInstance(view.getContext()).getByFont(TypefaceHelper.Font.ROBOTO_BLACK));
+
             subtitleView = (TextView) view.findViewById(R.id.article_subtitle);
+            subtitleView.setTypeface(TypefaceHelper.getInstance(view.getContext()).getByFont(TypefaceHelper.Font.ROBOTO_REGULAR));
         }
     }
 

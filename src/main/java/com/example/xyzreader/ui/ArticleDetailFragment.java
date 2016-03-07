@@ -8,7 +8,6 @@ import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.Rect;
-import android.graphics.Typeface;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.v4.app.ShareCompat;
@@ -27,6 +26,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.ImageLoader;
 import com.example.xyzreader.R;
 import com.example.xyzreader.data.ArticleLoader;
+import com.example.xyzreader.ui.helper.TypefaceHelper;
 
 /**
  * A fragment representing a single Article detail screen. This fragment is
@@ -177,10 +177,14 @@ public class ArticleDetailFragment extends Fragment implements
         }
 
         TextView titleView = (TextView) mRootView.findViewById(R.id.article_title);
+        titleView.setTypeface(TypefaceHelper.getInstance(getActivity()).getByFont(TypefaceHelper.Font.ROBOTO_BLACK));
+
         TextView bylineView = (TextView) mRootView.findViewById(R.id.article_byline);
         bylineView.setMovementMethod(new LinkMovementMethod());
+        bylineView.setTypeface(TypefaceHelper.getInstance(getActivity()).getByFont(TypefaceHelper.Font.ROBOTO_REGULAR));
+
         TextView bodyView = (TextView) mRootView.findViewById(R.id.article_body);
-        bodyView.setTypeface(Typeface.createFromAsset(getResources().getAssets(), "Rosario-Regular.ttf"));
+        bodyView.setTypeface(TypefaceHelper.getInstance(getActivity()).getByFont(TypefaceHelper.Font.ROBOTO_REGULAR));
 
         if (mCursor != null) {
             mRootView.setAlpha(0);
