@@ -26,6 +26,7 @@
 
     <style name="Toolbar" parent="Widget.AppCompat.Toolbar">
         <item name="android:background">?attr/colorPrimary</item>
+        <item name="logo">@drawable/logo</item>
         <item name="popupTheme">@style/Theme.AppCompat.Light</item>
     </style>
 </resources>
