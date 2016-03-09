@@ -28,5 +28,6 @@
         <item name="android:background">?attr/colorPrimary</item>
         <item name="logo">@drawable/logo</item>
         <item name="popupTheme">@style/Theme.AppCompat.Light</item>
+        <item name="android:elevation">4dp</item>
     </style>
 </resources>
