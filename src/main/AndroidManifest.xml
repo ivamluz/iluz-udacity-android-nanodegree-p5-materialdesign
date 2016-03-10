@@ -14,7 +14,8 @@
         android:label="@string/app_name"
         android:theme="@style/XyzTheme">
 
-        <activity android:name=".ui.ArticleListActivity"
+        <activity
+            android:name=".ui.ArticleListActivity"
             android:label="">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
